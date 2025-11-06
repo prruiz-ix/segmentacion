@@ -1,9 +1,13 @@
 import streamlit as st
-import pandas as pd
 
-st.write("Here's our first attempt at using data to create a table:")
+st.title("🧮 Mini Calculadora Peronista 🇦🇷")
+st.write("Elegí dos números y mirá la suma, fiera:")
 
-st.write(pd.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-}))
+# Entradas numéricas
+x = st.number_input("Valor de X:", value=0)
+y = st.number_input("Valor de Y:", value=0)
+
+# Botón para calcular
+if st.button("Calcular suma"):
+    resultado = x + y
+    st.success(f"La suma de {x} + {y} es: {resultado}")
